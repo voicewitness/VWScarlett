@@ -10,4 +10,8 @@
 
 @interface VWTheme : NSObject
 
+- (void)addStyleName:(NSString *)name value:(NSString *)value forClass:(NSString *)CSSClass;
+
+- (void)addStyleName:(NSString *)name value:(NSString *)value forId:(NSString *)CSSId;
+
 @end

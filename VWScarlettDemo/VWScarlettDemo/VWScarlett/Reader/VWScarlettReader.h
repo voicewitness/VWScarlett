@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VWScarlett.h"
 
+@class VWTheme;
 @interface VWScarlettReader : NSObject
 
-+ (VWScarlett *)readFromFileURL:(NSURL *)fileURL;
++ (VWTheme *)readFromFileURL:(NSURL *)fileURL;
 
 @end
