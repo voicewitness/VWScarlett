@@ -45,4 +45,23 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
++ (CGFloat)CGFloat:(NSString *)value
+{
+    NSString *valueString = (NSString *)value;
+    if ([valueString hasSuffix:@"px"]) {
+        valueString = [valueString substringToIndex:(valueString.length - 2)];
+    }
+    return [valueString doubleValue];
+}
+
++ (BOOL)visibility:(NSString *)value {
+    NSString *string = (NSString *)value;
+    if ([string isEqualToString:@"visible"]) {
+        return YES;
+    } else if ([string isEqualToString:@"hidden"]) {
+        return NO;
+    }
+    return YES;
+}
+
 @end

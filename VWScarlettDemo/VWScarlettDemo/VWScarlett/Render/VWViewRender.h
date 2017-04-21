@@ -13,7 +13,8 @@
 
 @interface VWViewRender : NSObject
 
-
 + (void)renderTheme:(VWTheme *)theme forView:(UIView *)view;
+
++ (void)updateStyles:(NSDictionary *)styles forView:(UIView *)view;
 
 @end

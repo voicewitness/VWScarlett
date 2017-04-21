@@ -65,7 +65,7 @@ const static char kScrletThemeIdKey;
 }
 
 - (void)vw_dealloc {
-    [VWThemeManager deallocThemeWithId:[NSString stringWithFormat:@"%zd",&self]];
+    objc_setAssociatedObject(self, &kScrlettKey, nil, OBJC_ASSOCIATION_RETAIN);
     [self vw_dealloc];
 }
 

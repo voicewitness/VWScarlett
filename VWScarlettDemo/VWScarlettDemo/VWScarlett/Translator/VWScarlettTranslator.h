@@ -13,4 +13,8 @@
 
 + (UIColor *)UIColor:(NSString *)value;
 
++ (CGFloat)CGFloat:(NSString *)value;
+
++ (BOOL)visibility:(NSString *)value;
+
 @end

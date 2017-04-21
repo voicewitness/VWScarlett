@@ -25,6 +25,7 @@
 		541B6F641EA3B95D00E4B658 /* VWViewRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B6F631EA3B95D00E4B658 /* VWViewRender.m */; };
 		541B6F671EA3B96D00E4B658 /* VWButtonRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B6F661EA3B96D00E4B658 /* VWButtonRender.m */; };
 		541B6F6A1EA3B97700E4B658 /* VWTextRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B6F691EA3B97700E4B658 /* VWTextRender.m */; };
+		541B6F6D1EAA681C00E4B658 /* testStyle.theme in Resources */ = {isa = PBXBuildFile; fileRef = 541B6F6C1EAA681C00E4B658 /* testStyle.theme */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		541B6F681EA3B97700E4B658 /* VWTextRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWTextRender.h; sourceTree = "<group>"; };
 		541B6F691EA3B97700E4B658 /* VWTextRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWTextRender.m; sourceTree = "<group>"; };
 		541B6F6B1EA3BAC900E4B658 /* VWViewRender_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWViewRender_private.h; sourceTree = "<group>"; };
+		541B6F6C1EAA681C00E4B658 /* testStyle.theme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testStyle.theme; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				541B6F211E9FCDF200E4B658 /* LaunchScreen.storyboard */,
 				541B6F241E9FCDF200E4B658 /* Info.plist */,
 				541B6F131E9FCDF200E4B658 /* Supporting Files */,
+				541B6F6C1EAA681C00E4B658 /* testStyle.theme */,
 			);
 			path = VWScarlettDemo;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				541B6F231E9FCDF200E4B658 /* LaunchScreen.storyboard in Resources */,
+				541B6F6D1EAA681C00E4B658 /* testStyle.theme in Resources */,
 				541B6F201E9FCDF200E4B658 /* Assets.xcassets in Resources */,
 				541B6F1E1E9FCDF200E4B658 /* Main.storyboard in Resources */,
 			);

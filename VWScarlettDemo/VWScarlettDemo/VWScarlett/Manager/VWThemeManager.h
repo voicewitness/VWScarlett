@@ -18,8 +18,7 @@
 
 //- (void)deallocThemeWithId:(NSString *)themeId;
 
-- (void)cleanTheme;
-
+//- (void)cleanTheme;
 
 - (void)applyTheme:(VWTheme *)theme forView:(UIView *)view;
 

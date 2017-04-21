@@ -14,4 +14,6 @@
 
 - (void)addStyleName:(NSString *)name value:(NSString *)value forId:(NSString *)CSSId;
 
+- (NSDictionary *)stylesForClass:(NSString *)CSSClass;
+
 @end

@@ -8,14 +8,24 @@
 
 #import "VWThemeManager.h"
 #import "VWButtonRender.h"
+#import "VWTextRender.h"
+#import "VWScarlett.h"
 
 @interface VWThemeManager()
+
+@property (nonatomic, weak) VWScarlett *scarlett;
 
 @property (nonatomic, weak) UIView *rootView;
 
 @end
 
 @implementation VWThemeManager
+
+- (instancetype)initWithScarlett:(VWScarlett *)scarlett {
+    self = [super init];
+    self.scarlett = scarlett;
+    return self;
+}
 
 - (void)applyScarlettForView:(UIView *)view {
     self.rootView = view;
@@ -31,6 +41,8 @@
 - (void)updateTheme:(VWTheme *)theme forView:(UIView *)view {
     if ([view isKindOfClass:[UIButton class]]) {
         [VWButtonRender renderTheme:theme forView:view];
+    } else if([view isKindOfClass:[UILabel class]]) {
+        [VWTextRender renderTheme:theme forView:view];
     } else {
         [VWViewRender renderTheme:theme forView:view];
     }

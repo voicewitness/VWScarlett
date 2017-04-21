@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class VWScarlett;
+@class VWScarlett,VWTheme;
 
 @interface UIView (VWScarlett)
 
@@ -16,8 +16,8 @@
 
 @property (nonatomic, copy) NSString *scarlettThemeId;
 
-@property (nonatomic, weak) VWScarlett *scarlett;
+@property (nonatomic, readonly) VWScarlett *scarlett;
 
-- (void)applyTheme:(VWScarlett *)theme;
+- (void)applyTheme:(VWTheme *)theme;
 
 @end

@@ -36,13 +36,18 @@ typedef ReaderState (^StateBlock)(NSScanner *scanner, NSString **result);
     while (![scanner isAtEnd]) {
         
         [scanner scanUpToString:@"." intoString:nil];
+        if ([scanner isAtEnd]) break;
         NSInteger CSSClassNameDefineStart = scanner.scanLocation + 1;
         
         [scanner scanUpToString:@"{" intoString:nil];
+        if ([scanner isAtEnd]) break;
+        
         NSInteger CSSDefineStart = scanner.scanLocation + 1;
         NSArray *CSSClassesArray = [[content substringWithRange:NSMakeRange(CSSClassNameDefineStart, CSSDefineStart - CSSClassNameDefineStart - 1)]componentsSeparatedByString:@","];
         
         [scanner scanUpToString:@"}" intoString:nil];
+        if ([scanner isAtEnd]) break;
+        
         NSInteger CSSDefineEnd = scanner.scanLocation + 1;
         
         NSString *CSSDef = [content substringWithRange:NSMakeRange(CSSDefineStart, CSSDefineEnd - CSSDefineStart - 1)];
