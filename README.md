@@ -4,7 +4,8 @@ VWScarlett
 [![CocoaPods](https://img.shields.io/cocoapods/v/VWScarlett.svg?style=flat)](http://cocoapods.org/?q=VWScarlett)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
-This is a bubble label often used in chat list. After define the unstretchable part of your bubble image then you can use it just like a label. All details in example project.
+VWScarlett is lightweight solution for changing app theme
+Read a theme file written like css, then apply it.
 
 CocoaPods Installation
 ==============
@@ -14,9 +15,7 @@ CocoaPods Installation
 
 License
 ==============
-VWScarlett is lightweight solution for changing app theme
-Read a theme file written like css, then apply it.
-
+See [LICENSE](https://github.com/voicewitness/VWScarlett/LICENSE.md)
 <br/><br/>
 ---
 中文介绍
