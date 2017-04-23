@@ -14,7 +14,7 @@
 
 @property (nonatomic, copy) NSString *scarlettThemeClass;
 
-@property (nonatomic, copy) NSString *scarlettThemeId;
+//@property (nonatomic, copy) NSString *scarlettThemeId;
 
 @property (nonatomic, readonly) VWScarlett *scarlett;
 
