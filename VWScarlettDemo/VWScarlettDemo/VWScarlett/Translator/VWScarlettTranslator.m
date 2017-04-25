@@ -28,7 +28,7 @@
         red     = ((colorValue & 0xFF000000) >> 24) / 255.0;
         green   = ((colorValue & 0x00FF0000) >> 16) / 255.0;
         blue    = ((colorValue & 0x0000FF00) >> 8) / 255.0;
-        alpha    = (colorValue & 0x0000FF00) / 255.0;
+        alpha    = (colorValue & 0x000000FF) / 255.0;
     } else if ([value hasPrefix:@"rgb("]) {
         int r,g,b;
         sscanf(value.UTF8String, "rgb(%d,%d,%d)", &r, &g, &b);
@@ -45,23 +45,34 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
++ (CGColorRef)CGColor:(NSString *)value {
+    return [[self UIColor:value]CGColor];
+}
+
 + (CGFloat)CGFloat:(NSString *)value
 {
-    NSString *valueString = (NSString *)value;
-    if ([valueString hasSuffix:@"px"]) {
-        valueString = [valueString substringToIndex:(valueString.length - 2)];
+    if ([value hasSuffix:@"px"]) {
+        value = [value substringToIndex:(value.length - 2)];
     }
-    return [valueString doubleValue];
+    return [value doubleValue];
 }
 
 + (BOOL)visibility:(NSString *)value {
-    NSString *string = (NSString *)value;
-    if ([string isEqualToString:@"visible"]) {
+    if ([value isEqualToString:@"visible"]) {
         return YES;
-    } else if ([string isEqualToString:@"hidden"]) {
+    } else if ([value isEqualToString:@"hidden"]) {
         return NO;
     }
     return YES;
+}
+
++ (NSTextAlignment)textAlignment:(NSString *)value {
+    if ([value isEqualToString:@"right"]) {
+        return NSTextAlignmentRight;
+    } else if ([value isEqualToString:@"center"]) {
+        return NSTextAlignmentCenter;
+    }
+    return NSTextAlignmentLeft;
 }
 
 @end

@@ -84,6 +84,7 @@
 		541B6F691EA3B97700E4B658 /* VWTextRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWTextRender.m; sourceTree = "<group>"; };
 		541B6F6B1EA3BAC900E4B658 /* VWViewRender_private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWViewRender_private.h; sourceTree = "<group>"; };
 		541B6F6C1EAA681C00E4B658 /* testStyle.theme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testStyle.theme; sourceTree = "<group>"; };
+		541B6F6E1EAF6D2600E4B658 /* VWThemeRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWThemeRender.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +248,7 @@
 				541B6F681EA3B97700E4B658 /* VWTextRender.h */,
 				541B6F691EA3B97700E4B658 /* VWTextRender.m */,
 				541B6F6B1EA3BAC900E4B658 /* VWViewRender_private.h */,
+				541B6F6E1EAF6D2600E4B658 /* VWThemeRender.h */,
 			);
 			path = Render;
 			sourceTree = "<group>";

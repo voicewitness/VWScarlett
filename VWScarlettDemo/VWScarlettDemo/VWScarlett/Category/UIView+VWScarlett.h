@@ -10,6 +10,8 @@
 
 @class VWScarlett,VWTheme;
 
+@protocol VWThemeRender;
+
 @interface UIView (VWScarlett)
 
 @property (nonatomic, copy) NSString *scarlettThemeClass;
@@ -19,5 +21,7 @@
 @property (nonatomic, readonly) VWScarlett *scarlett;
 
 - (void)applyTheme:(VWTheme *)theme;
+
+- (void)applyTheme:(VWTheme *)theme withRenderHook:(Class (^)(UIView *view))renderHook;
 
 @end

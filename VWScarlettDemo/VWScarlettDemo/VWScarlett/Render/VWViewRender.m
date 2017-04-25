@@ -36,6 +36,22 @@
         BOOL visibility = [VWScarlettTranslator visibility:styles[@"visibility"]];
         view.hidden = visibility;
     }
+    
+    if (styles[@"border-color"]) {
+        CGColorRef borderColor = [VWScarlettTranslator CGColor:styles[@"border-color"]];
+        view.layer.borderColor = borderColor;
+    }
+    
+    if (styles[@"border-width"]) {
+        CGFloat borderWidth = [VWScarlettTranslator CGFloat:styles[@"border-width"]];
+        view.layer.borderWidth = borderWidth;
+    }
+    
+    if(styles[@"border-radius"]) {
+        CGFloat cornerRadius = [VWScarlettTranslator CGFloat:styles[@"border-radius"]];
+        view.layer.cornerRadius = cornerRadius;
+        view.layer.masksToBounds = YES;
+    }
 }
 
 @end
