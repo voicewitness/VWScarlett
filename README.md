@@ -15,7 +15,7 @@ CocoaPods Installation
 
 License
 ==============
-See [LICENSE](https://github.com/voicewitness/VWScarlett/LICENSE.md)
+See [LICENSE](https://github.com/voicewitness/VWScarlett/blob/master/LICENSE.md)
 <br/><br/>
 ---
 中文介绍
