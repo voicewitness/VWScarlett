@@ -13,8 +13,12 @@
 
 + (UIColor *)UIColor:(NSString *)value;
 
++ (CGColorRef)CGColor:(NSString *)value;
+
 + (CGFloat)CGFloat:(NSString *)value;
 
 + (BOOL)visibility:(NSString *)value;
+
++ (NSTextAlignment)textAlignment:(NSString *)value;
 
 @end

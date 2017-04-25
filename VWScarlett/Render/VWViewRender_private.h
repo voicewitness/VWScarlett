@@ -10,5 +10,7 @@
 
 @interface VWViewRender()
 
++ (void)updateStyles:(NSDictionary *)styles forView:(UIView *)view;
+
 @end
 

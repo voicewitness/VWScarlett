@@ -24,6 +24,17 @@ const static char kScrletThemeIdKey;
     method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
+- (void)applyTheme:(VWTheme *)theme {
+    [self applyTheme:theme withRenderHook:nil];
+}
+
+- (void)applyTheme:(VWTheme *)theme withRenderHook:(Class (^)(UIView *))renderHook {
+    if (!self.scarlett) {
+        [self applyScarlett:[VWScarlett new]];
+    }
+    [self.scarlett.themeManager applyTheme:theme forView:self withRenderHook:renderHook];
+}
+
 - (void)addSubview:(UIView *)view inTheme:(VWScarlett *)theme {
     [self addSubview:view];
 }
@@ -55,13 +66,6 @@ const static char kScrletThemeIdKey;
 
 - (VWScarlett *)scarlett {
     return (objc_getAssociatedObject(self, &kScrlettKey)?:self.superview.scarlett);
-}
-
-- (void)applyTheme:(VWTheme *)theme {
-    if (!self.scarlett) {
-        [self applyScarlett:[VWScarlett new]];
-    }
-    [self.scarlett.themeManager applyTheme:theme forView:self];
 }
 
 - (void)vw_dealloc {

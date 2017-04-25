@@ -11,6 +11,8 @@
 #import "VWTextRender.h"
 #import "VWScarlett.h"
 
+typedef Class (^VWRenderHookBlock)(UIView *);
+
 @interface VWThemeManager()
 
 @property (nonatomic, weak) VWScarlett *scarlett;
@@ -32,22 +34,33 @@
 }
 
 - (void)applyTheme:(VWTheme *)theme forView:(UIView *)view {
-    
-//    [view.subviews makeObjectsPerformSelector:@selector(applyTheme:) withObject:theme];
+    [self applyTheme:theme forView:view withRenderHook:nil];
+}
+- (void)applyTheme:(VWTheme *)theme forView:(UIView *)view withRenderHook:(VWRenderHookBlock)renderHook {
     [self applyScarlettForView:view];
-    [self updateTheme:theme forView:view];
+    [self updateTheme:theme forView:view withRenderHook:renderHook];
 }
 
-- (void)updateTheme:(VWTheme *)theme forView:(UIView *)view {
-    if ([view isKindOfClass:[UIButton class]]) {
-        [VWButtonRender renderTheme:theme forView:view];
-    } else if([view isKindOfClass:[UILabel class]]) {
-        [VWTextRender renderTheme:theme forView:view];
-    } else {
-        [VWViewRender renderTheme:theme forView:view];
+- (void)updateTheme:(VWTheme *)theme forView:(UIView *)view withRenderHook:(VWRenderHookBlock)renderHook {
+    id renderClass;
+    if(renderHook) {
+        renderClass = renderHook(view);
+        if(![renderClass respondsToSelector:@selector(renderTheme:forView:)]) {
+            renderClass = nil;
+        }
     }
+    if (!renderClass) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            renderClass = [VWButtonRender class];
+        } else if([view isKindOfClass:[UILabel class]]) {
+            renderClass = [VWTextRender class];
+        } else {
+            renderClass = [VWViewRender class];
+        }
+    }
+    [renderClass renderTheme:theme forView:view];
     for (UIView *subView in view.subviews) {
-        [self updateTheme:theme forView:subView];
+        [self updateTheme:theme forView:subView withRenderHook:renderHook];
     }
 }
 

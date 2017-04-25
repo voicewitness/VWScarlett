@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class VWScarlett;
-@class VWTheme;
+@class VWScarlett,VWTheme;
 
 @interface VWThemeManager : NSObject
 
@@ -21,6 +20,8 @@
 //- (void)cleanTheme;
 
 - (void)applyTheme:(VWTheme *)theme forView:(UIView *)view;
+
+- (void)applyTheme:(VWTheme *)theme forView:(UIView *)view withRenderHook:(Class (^)(UIView *))renderHook;
 
 - (void)applyScarlettForView:(UIView *)view;
 

@@ -8,6 +8,7 @@
 
 #import "VWButtonRender.h"
 #import "VWTextRender.h"
+#import "VWViewRender_private.h"
 
 @implementation VWButtonRender
 
